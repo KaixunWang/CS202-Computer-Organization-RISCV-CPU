@@ -1,0 +1,105 @@
+// --- opcode ---
+`define R_TYPE 7'b0110011
+`define I_TYPE_1 7'b0010011
+`define I_TYPE_2 7'b0000011 //load
+`define S_TYPE 7'b0100011
+`define B_TYPE 7'b1100011
+`define JAL_TYPE 7'b1101111
+`define JALR_TYPE 7'b1100111
+`define U_TYPE_1 7'b0110111
+`define U_TYPE_2 7'b0010111
+`define ECALL 7'b1110011
+
+`define LW_FUNCT3 3'b010
+`define LB_FUNCT3 3'b000
+`define LBU_FUNCT3 3'b100
+
+`define DEBOUNCER_DELAY 32'd10000000
+`define BUTTON_NUMBER 5
+`define SWITCH_NUMBER 16
+
+`define ALUOP_RTYPE 4'b0001
+`define ALUOP_BTYPE 4'b0010
+`define ALUOP_ITYPE 4'b0011
+`define ALUOP_JALTYPE 4'b0100
+`define ALUOP_JALRTYPE 4'b0101
+`define ALUOP_LUI 4'b0110
+`define ALUOP_AUIPC 4'b0111
+`define ALUOP_ECALL 4'b1000
+`define ALUOP_LS 4'b1001
+
+`define SP_INITIAL 32'hffff0000
+
+`define FUNCT3_SLTU 3'b011
+`define FUNCT3_LBU 3'b100
+`define FUNCT3_LHU 3'b101
+`define FUNCT3_BLTU 3'b110
+`define FUNCT3_BGEU 3'b111
+
+`define ALU_CTRL_NOP 5'b00000
+`define ALU_CTRL_ADD 5'b00001
+`define ALU_CTRL_SUB 5'b00010
+`define ALU_CTRL_AND  5'b00011
+`define ALU_CTRL_OR  5'b00100
+`define ALU_CTRL_XOR  5'b00101
+`define ALU_CTRL_SLT  5'b00110
+`define ALU_CTRL_SLTU 5'b00111
+`define ALU_CTRL_SLL 5'b01000
+`define ALU_CTRL_SRL 5'b01001
+`define ALU_CTRL_MUL 5'b01010
+`define ALU_CTRL_JAL 5'b01011
+`define ALU_CTRL_JALR 5'b01100
+`define ALU_CTRL_LUI 5'b01101
+`define ALU_CTRL_AUIPC 5'b01110
+`define ALU_CTRL_DIV 5'b01111
+`define ALU_CTRL_ECALL_READ 5'b10000
+`define ALU_CTRL_ECALL_WRITE 5'b10001
+
+//IO space FFFF_FE00 512B space
+// FFFF_FE00
+// 1111 1110 0000 0000
+`define LED_MEM 11'b11111110000
+`define SWITCH_MEM 11'b11111110010
+`define SEG_MEM 11'b11111110100
+
+`define SWITCH_TOTAL_MEM 32'b11111111111111111111111001010000
+`define LED_TOTAL_MEM 32'b11111111111111111111111000001000
+
+//500hz
+`define SEG_CYCLE_TIME 100_000 
+
+`define SEG_0 4'b0000
+`define SEG_1 4'b0001
+`define SEG_2 4'b0010
+`define SEG_3 4'b0011
+`define SEG_4 4'b0100
+`define SEG_5 4'b0101
+`define SEG_6 4'b0110
+`define SEG_7 4'b0111
+`define SEG_8 4'b1000
+`define SEG_9 4'b1001
+`define SEG_A 4'b1010
+`define SEG_B 4'b1011
+`define SEG_C 4'b1100
+`define SEG_D 4'b1101
+`define SEG_E 4'b1110
+`define SEG_F 4'b1111
+`define SEG_MINUS 4'b1111
+
+`define SEG_0_VAL 8'b1111_1100
+`define SEG_1_VAL 8'b0110_0000
+`define SEG_2_VAL 8'b1101_1010
+`define SEG_3_VAL 8'b1111_0010
+`define SEG_4_VAL 8'b0110_0110
+`define SEG_5_VAL 8'b1011_0110
+`define SEG_6_VAL 8'b1011_1110
+`define SEG_7_VAL 8'b1110_0000
+`define SEG_8_VAL 8'b1111_1110
+`define SEG_9_VAL 8'b1111_0110
+`define SEG_A_VAL 8'b1110_1110
+`define SEG_B_VAL 8'b0011_1110
+`define SEG_C_VAL 8'b1001_1100
+`define SEG_D_VAL 8'b0111_1010
+`define SEG_E_VAL 8'b1001_1110
+`define SEG_F_VAL 8'b1000_1110
+`define SEG_MINUS_VAL 8'b0000_0010
